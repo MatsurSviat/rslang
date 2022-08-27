@@ -233,16 +233,3 @@ export const Users = {
     return response.json();
   },
 };
-/*export const signIn = async (auth: Auth): Promise<AuthResponse> => {
-  const url = `${BASE_URL}/signin`;
-  const response: Response = await fetch(url, {
-    method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(auth)
-  });
-  const result = await response.json();
-  token = result.token;
-  console.log(token);
-  return result;
-}*/
