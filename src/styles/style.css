@@ -1,149 +1,204 @@
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    background-color: burlywood;
-    width: 98%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  background-color: white;
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 p {
-    font-size: 20px;
+  font-size: 20px;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+ul,
+li {
+  list-style: none;
+}
+
+button {
+ background-color:burlywood;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+}
+
+button:hover {
+    background-color:darkgray;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.root {
+  height: 100%;
 }
 
 .header {
-    position: sticky;
-    top: 0;
-    flex: 0 0 auto;
-    margin-bottom: 30px;
+  position: sticky;
+  top: 0;
+  flex: 0 0 auto;
+  margin-bottom: 30px;
 }
 
 .header-nav {
-    display: inline-flex;
-    justify-content: space-between;
-    width: 98%;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 98%;
 }
 
 .rs-lang {
-    width: 100px;
+  width: 100px;
 }
 
 .theme {
-    height: 60px;
-    width: 60px;
-    font-size: 35px;
+  height: 60px;
+  width: 60px;
+  font-size: 35px;
 }
 
 .authorization {
-    height: 60px;
-    width: 60px;
-    font-size: 40px;
+  height: 60px;
+  width: 60px;
+  font-size: 35px;
 }
 
 .menu {
-    height: 60px;
-    width: 60px;
-    padding-top: 25px;
-    padding-right: 35px;
+  height: 60px;
+  width: 60px;
+  padding-top: 25px;
+  padding-right: 35px;
 }
 
 .menu-btn span,
 .menu-btn span::before,
 .menu-btn span::after {
-    top: 45%;
-    margin-top: -1px;
-    height: 2px;
-    position: absolute;
-    width: 30px;
-    background-color: black;
+  top: 45%;
+  height: 2px;
+  position: absolute;
+  width: 30px;
+  background-color: black;
 }
 
 .menu-btn span::before,
 .menu-btn span::after {
-    content: '';
-    display: block;
-	align-items: center;
+  content: "";
+  display: block;
+  align-items: center;
 }
 
 .menu-btn span::before {
-	transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 .menu-btn span::after {
-	transform: translateY(10px);
+  transform: translateY(10px);
 }
 
 .main {
-    flex: 1 0 auto;
+  flex: 1 1 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  height: 100px;
+}
+
+.book,
+.statistic,
+.savannah,
+.sprint,
+.audio,
+.writing {
+  width: 15%;
+  height: 50%;
 }
 
 .information {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1000px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
 }
 
 .information-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
 }
 
 .more,
 .start,
 .video,
 .about {
-    display: flex;
-    width: 300px;
-    height: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  width: 300px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer {
-    position: sticky;
-    bottom: 0px;
-    z-index: 10;
+  flex: 0 0 auto;
 }
 
 .logo {
-    width: 80px;
-    height: 40px;
+  width: 80px;
+  height: 40px;
 }
 
 .footer-nav {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.create-author {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  gap: 15px;
 }
 
 .header-link {
-    text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .book-title {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .book-nav {
-    display: flex;
-    justify-content: center;
-	margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .book-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
 }
 
 .elementary,
@@ -152,6 +207,100 @@ p {
 .upper-intermediate,
 .advanced,
 .profiency {
+  width: 300px;
+  height: 100px;
+}
+
+.elementary-container {
+    display: flex;
+    justify-content: center;
+}
+
+.words-container {
+    display: flex;
+    border: solid;
+    border-color: black;
+    width: 80%;
+    height: 266px;
+}
+
+.img-container {
+    width: 30%;
+    height: 100%;
+    border: solid;
+    border-color: black;
+}
+
+.word-wrapper {
+    border: solid;
+    border-color: black;
+    height: 266px;
+    width: 70%;
+}
+
+.word {
+    border: solid;
+    border-color: black;
+    height: 18%;
+    width: 100%;
+}
+
+.example-first {
+    border: solid;
+    border-color: black;
+    height: 18%;
+    width: 100%;
+}
+
+.example-second {
+    border: solid;
+    border-color: black;
+    height: 18%;
+    width: 100%;
+}
+
+.audio-container {
+    border: solid;
+    border-color: black;
+    height: 18%;
+    width: 100%;
+}
+
+.audio-btn {
+    width: 100%;
+    height: 100%;
+}
+
+.word-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-color: black;
+    height: 16%;
+    width: 100%;
+    gap: 10px;
+}
+
+.hard-word {
+    width: 40%;
+    height: 70%;
+}
+
+.delete-word {
+    width: 40%;
+    height: 70%;
+}
+
+.main-autorization-wrapper {
+ display: flex;
+ justify-content: center;
+}
+
+.autorization-wrapper {
+ display: flex;
+ border: solid;
+    border-color: black;
     width: 300px;
-    height: 100px;
+    height: 300px;
 }

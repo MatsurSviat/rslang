@@ -1,15 +1,13 @@
-export async function baseContainer() {
+export const baseContainerRender = async () => {
   const rootContainer = document.querySelector(".root") as HTMLDivElement;
-  const baseContainer = document.createElement("div");
-
-  baseContainer.innerHTML = `
-  
+  rootContainer.innerHTML = `
+  <div class="wrapper">
     <header class="header">
 			<div class="header-nav">
-			<h2 class="rs-lang">RS Lang</h2>
+			<a class="header-link" href="../index.html"><h2 class="rs-lang">RS Lang</h2></a>
 			<div class="header-buttons">
 			<button class="theme">&#9790;</button>
-			<button class="authorization">&#9094;</button>
+			<button class="authorization">🔒</button>
 			<button class="menu">
 			<a href="#" class="menu-btn">
                 <span></span>
@@ -41,10 +39,14 @@ export async function baseContainer() {
 		<footer class="footer">
 			<div class="footer-nav">
 				<a href="https://rs.school/js/"><img class="logo" src="./assets/rslogo.png" alt="rs-logo"></a>
+				<ul class="create-author">
+				<li>Created at 2022:</li>
+				<li><a href="https://github.com/MatsurSviat">Sviat</a></li>
+				<li><a href="https://github.com/ALIAKSEI-sl">Aliaksei</a></li>
+				<li><a href="https://github.com/kayirmak">Kayrat</a></li> 
+				</ul>
 			</div>
 		</footer>
-  
+  </div>
       `;
-
-  rootContainer.appendChild(baseContainer);
-}
+};
