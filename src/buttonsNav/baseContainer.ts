@@ -36,6 +36,7 @@ export const baseContainerRender = async () => {
 		  </div>
 		</main>
 
+
 		<footer class="footer">
 			<div class="footer-nav">
 				<a href="https://rs.school/js/"><img class="logo" src="./assets/rslogo.png" alt="rs-logo"></a>

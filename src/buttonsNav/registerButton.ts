@@ -1,5 +1,4 @@
 const authorizationHandler = async () => {
-    console.log(1)
   const mainContainer = document.querySelector(".main") as HTMLElement;
   mainContainer.innerHTML = `
         <div class="main-autorization-wrapper">

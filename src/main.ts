@@ -11,5 +11,5 @@ export async function start() {
   await statisticContainer();
   await savannahContainer();
   await authorizationContainerRender();
-  await sprintContainer()
+  await sprintContainer();
 }

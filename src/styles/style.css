@@ -26,14 +26,14 @@ li {
 }
 
 button {
- background-color:burlywood;
- border: none;
- border-radius: 5px;
- cursor: pointer;
+  background-color: burlywood;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color:darkgray;
+  background-color: darkgray;
 }
 
 .wrapper {
@@ -212,95 +212,165 @@ button:hover {
 }
 
 .elementary-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .words-container {
-    display: flex;
-    border: solid;
-    border-color: black;
-    width: 80%;
-    height: 266px;
+  display: flex;
+  border: solid;
+  border-color: black;
+  width: 80%;
+  height: 266px;
+  margin-bottom: 20px;
 }
 
 .img-container {
-    width: 30%;
-    height: 100%;
-    border: solid;
-    border-color: black;
+  width: 30%;
+  height: 100%;
+  border: solid;
+  border-color: black;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
 }
 
 .word-wrapper {
-    border: solid;
-    border-color: black;
-    height: 266px;
-    width: 70%;
+  border: solid;
+  border-color: black;
+  height: 266px;
+  width: 70%;
 }
 
 .word {
-    border: solid;
-    border-color: black;
-    height: 18%;
-    width: 100%;
+  border: solid;
+  border-color: black;
+  height: 18%;
+  width: 100%;
 }
 
 .example-first {
-    border: solid;
-    border-color: black;
-    height: 18%;
-    width: 100%;
+  border: solid;
+  border-color: black;
+  height: 18%;
+  width: 100%;
 }
 
 .example-second {
-    border: solid;
-    border-color: black;
-    height: 18%;
-    width: 100%;
+  border: solid;
+  border-color: black;
+  height: 18%;
+  width: 100%;
 }
 
 .audio-container {
-    border: solid;
-    border-color: black;
-    height: 18%;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid;
+  border-color: black;
+  height: 18%;
+  width: 100%;
 }
 
-.audio-btn {
-    width: 100%;
-    height: 100%;
+.audio-btn-word,
+.audio-btn-example {
+  width: 100%;
+  height: 100%;
 }
 
 .word-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid;
-    border-color: black;
-    height: 16%;
-    width: 100%;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  border-color: black;
+  height: 16%;
+  width: 100%;
+  gap: 10px;
 }
 
 .hard-word {
-    width: 40%;
-    height: 70%;
+  width: 40%;
+  height: 70%;
 }
 
 .delete-word {
-    width: 40%;
-    height: 70%;
+  width: 40%;
+  height: 70%;
 }
 
 .main-autorization-wrapper {
- display: flex;
- justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .autorization-wrapper {
- display: flex;
- border: solid;
-    border-color: black;
-    width: 300px;
-    height: 300px;
+  display: flex;
+  border: solid;
+  border-color: black;
+  width: 300px;
+  height: 300px;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 8px;
+  border-radius: 50px;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+}
+
+.pagination ul li{
+  color: #20B2AA;
+  list-style: none;
+  line-height: 45px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.pagination ul li.numb{
+  list-style: none;
+  height: 45px;
+  width: 45px;
+  margin: 0 3px;
+  line-height: 45px;
+  border-radius: 50%;
+}
+
+.pagination ul li.numb.first{
+  margin: 0px 3px 0 -5px;
+}
+.pagination ul li.numb.last{
+  margin: 0px -5px 0 3px;
+}
+.pagination ul li.dots{
+  font-size: 22px;
+  cursor: default;
+}
+.pagination ul li.btn{
+  padding: 0 20px;
+  border-radius: 50px;
+}
+.pagination li.active,
+.pagination ul li.numb:hover,
+.pagination ul li:first-child:hover,
+.pagination ul li:last-child:hover{
+  color: #fff;
+  background: #20B2AA;
 }

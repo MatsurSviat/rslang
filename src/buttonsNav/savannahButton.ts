@@ -1,4 +1,4 @@
-export const savannahContainer = async() => {
+export const savannahContainer = async () => {
   const bookBtn = document.querySelector(".savannah");
   const mainInfoContainer = document.querySelector(".main") as HTMLElement;
   async function bookHandler() {
@@ -8,4 +8,4 @@ export const savannahContainer = async() => {
   }
 
   bookBtn?.addEventListener("click", bookHandler);
-}
+};
