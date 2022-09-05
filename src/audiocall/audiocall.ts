@@ -14,7 +14,7 @@ const Audiocall = function () {
 
     const audiocall: HTMLElement = document.createElement("div");
     audiocall.className = "audiocall";
-    document.querySelector("body")!.append(audiocall);
+    document.querySelector(".main")!.append(audiocall);
 
     const audiocallTitle: HTMLElement = document.createElement("h2");
     audiocallTitle.className = "audiocall-title";
@@ -89,9 +89,9 @@ const Audiocall = function () {
     const topbar: HTMLElement = document.createElement("div");
     topbar.className = "audiocall-game-topbar";
 
-    const endGame: HTMLButtonElement = document.createElement("button");
-    endGame.className = "audiocall-game-topbar__end-game";
-    endGame.textContent = "X";
+    // const endGame: HTMLButtonElement = document.createElement("button");
+    // endGame.className = "audiocall-game-topbar__end-game";
+    // endGame.textContent = "X";
 
     const contentGame: HTMLElement = document.createElement("div");
     contentGame.className = "audiocall-game-content";
@@ -113,7 +113,7 @@ const Audiocall = function () {
     nextBtn.innerHTML = "Не знаю";
     next.append(nextBtn);
 
-    topbar.append(endGame);
+    // topbar.append(endGame);
     contentGame.append(soundBox, translationWords, next);
     main.append(topbar, contentGame);
     audiocall.append(main);
@@ -271,7 +271,14 @@ const Audiocall = function () {
     const contentPoint: HTMLElement = document.createElement("div");
     contentPoint.className = "point-content";
 
-    resPoint.append(titlePoint, contentPoint);
+    const btnCloseRes = document.createElement("a");
+    btnCloseRes.className = "point-close";
+    btnCloseRes.href = "../../index.html";
+    btnCloseRes.innerHTML = `
+        <button>Закрыть</button>
+    `;
+
+    resPoint.append(titlePoint, contentPoint, btnCloseRes);
 
     answers.forEach((el) => {
       const word: HTMLElement = document.createElement("div");
@@ -313,7 +320,5 @@ const Audiocall = function () {
     startGame,
   };
 };
-const audioGame = Audiocall();
-audioGame.renderSelectOptions();
 
 export default Audiocall;
