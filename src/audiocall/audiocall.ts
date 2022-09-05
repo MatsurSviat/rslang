@@ -2,7 +2,7 @@ import { getFile, req, wordsForGame } from "../api/api";
 import { Answer, Word } from "../types";
 
 import { soundImg } from "../assets/images/svgs";
-import { setItem } from "../storage/localstorage";
+import { getItem, setItem } from "../storage/localstorage";
 import "./audiocall.css";
 import AudioPlay from "../assets/audios/audios";
 
@@ -23,27 +23,27 @@ const Audiocall = function () {
     const audiocallText: HTMLElement = document.createElement("div");
     audiocallText.className = "audiocall-text";
     audiocallText.innerHTML = `
-        <p>Тренировка Аудиовызов улучшает восприятие речи на слух.</p>
-        <p>
-        Чтобы играть с помощью клавиатуры, используй клавиши
-        1, 2, 3, 4, 5 - чтобы дать ответ,
-        space - для воспроизведения звука,
-        enter - чтобы пропустить вопрос,
-        стрелка-вправо - чтобы перейти к следующему вопросу.
-        </p>
-    `;
+          <p>Тренировка Аудиовызов улучшает восприятие речи на слух.</p>
+          <p>
+          Чтобы играть с помощью клавиатуры, используй клавиши
+          1, 2, 3, 4, 5 - чтобы дать ответ,
+          space - для воспроизведения звука,
+          enter - чтобы пропустить вопрос,
+          стрелка-вправо - чтобы перейти к следующему вопросу.
+          </p>
+      `;
 
     const audiocallLevels: HTMLElement = document.createElement("div");
     audiocallLevels.className = "audiocall-levels";
     audiocallLevels.innerHTML = `
-        <select name="" id="level-select"></select>
-    `;
+          <select name="" id="level-select"></select>
+      `;
 
     const audiocallStart: HTMLElement = document.createElement("div");
     audiocallStart.className = "audiocall-start";
     audiocallStart.innerHTML = `
-        <button class="audiocall-start__btn">Начать</button>
-    `;
+          <button class="audiocall-start__btn">Начать</button>
+      `;
 
     audiocall.append(
       audiocallTitle,
@@ -121,15 +121,17 @@ const Audiocall = function () {
 
     //request
     levelVal = groupVal ? Number(groupVal.value) : levelVal++;
-    let pageVal = 0;
+    let pageVal = getItem("page");
+    console.log(typeof pageVal);
+
     if (!data.length) {
       while (data.length < 50) {
         const response = await wordsForGame(levelVal, pageVal);
         if (!response.length) {
           pageVal = 0;
+          setItem("page", pageVal);
         } else {
           pageVal++;
-          setItem("group", levelVal);
           setItem("page", pageVal);
         }
         response.forEach((el) => {
