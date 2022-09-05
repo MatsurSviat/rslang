@@ -1,10 +1,10 @@
 import { Words, BASE_URL } from "../API";
-import { element } from "./paginationElementary";
 import { audioBtnWordPlay } from "./audioButton";
+import { profiencyPagination } from "./paginationProfiency";
 
-export async function elementaryHandler() {
+export async function profiencyHandler() {
   const mainContainer = document.querySelector(".main") as HTMLElement;
-  const responseWords = await Words.getWords("0", "0");
+  const responseWords = await Words.getWords("5", "0");
   mainContainer.innerHTML = `
     ${
       responseWords
@@ -44,11 +44,11 @@ export async function elementaryHandler() {
     }
     `;
   audioBtnWordPlay();
-  element(30, 1);
+  profiencyPagination(30, 1);
 }
 
-export const elementaryLevel = () => {
-  const elementaryBtn = document.querySelector(".elementary") as HTMLElement;
+export const profiencyLevel = () => {
+  const profiencyBtn = document.querySelector(".profiency") as HTMLElement;
 
-  elementaryBtn.addEventListener("click", elementaryHandler);
+  profiencyBtn.addEventListener("click", profiencyHandler);
 };

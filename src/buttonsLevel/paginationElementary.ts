@@ -38,7 +38,7 @@ export async function element(totalPages: number, page: number) {
   if (page < totalPages - 1) {
     liTag += `<li class="dots">...</li>`;
     if (page < totalPages - 2) {
-      liTag += `<li class="numb lastPage" data-id="29">${totalPages}</li>`;
+      liTag += `<li class="numb lastPage" data-id="${totalPages}">${totalPages}</li>`;
     }
   }
 
@@ -149,14 +149,12 @@ export async function element(totalPages: number, page: number) {
     element(totalPages, 1);
   }
 
-
-
   async function activeBtnHandler(event: Event) {
     const btnId = Number((event.target as HTMLElement).dataset.id);
 
     const mainContainer = document.querySelector(".main") as HTMLElement;
 
-    const responseWords = await Words.getWords("0", `${btnId}`);
+    const responseWords = await Words.getWords("0", `${btnId - 1}`);
     mainContainer.innerHTML = `
     ${
       responseWords
@@ -200,8 +198,6 @@ export async function element(totalPages: number, page: number) {
       element(totalPages, +btnId);
     }
   }
-
-  
 
   nextBtn?.addEventListener("click", nextBtnhandler);
   prevBtn?.addEventListener("click", preBtnHandler);

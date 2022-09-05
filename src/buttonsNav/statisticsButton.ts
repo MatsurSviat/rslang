@@ -1,5 +1,5 @@
 export const statisticContainer = async () => {
-  const bookBtn = document.querySelector(".statistic");
+  const bookBtns = document.querySelectorAll(".statistic");
   const mainInfoContainer = document.querySelector(".main") as HTMLElement;
   async function bookHandler() {
     return (mainInfoContainer.innerHTML = `
@@ -7,5 +7,7 @@ export const statisticContainer = async () => {
     `);
   }
 
-  bookBtn?.addEventListener("click", bookHandler);
+  bookBtns?.forEach((bookBtn) =>
+    bookBtn.addEventListener("click", bookHandler)
+  );
 };

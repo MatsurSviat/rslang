@@ -75,35 +75,53 @@ button:hover {
 }
 
 .menu {
-  height: 60px;
-  width: 60px;
-  padding-top: 25px;
-  padding-right: 35px;
+    height: 60px;
+    width: 60px;
+    position: relative;
+    display: inline-block;
 }
 
-.menu-btn span,
-.menu-btn span::before,
-.menu-btn span::after {
-  top: 45%;
-  height: 2px;
-  position: absolute;
-  width: 30px;
-  background-color: black;
+.menu-btn {
+    width: 100%;
+    height: 100%;
+ font-size: 40px;
+ padding-bottom: 2px;
 }
 
-.menu-btn span::before,
-.menu-btn span::after {
-  content: "";
-  display: block;
-  align-items: center;
+.menu-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 105px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
-.menu-btn span::before {
-  transform: translateY(-10px);
+.menu-content a {
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
 }
 
-.menu-btn span::after {
-  transform: translateY(10px);
+.menu-content a:hover {
+    background-color: #ddd;
+}
+
+.menu:hover .menu-content {
+    display: block;
+}
+
+.menu:hover .menu-btn {
+    background-color:indianred;
+}
+
+#book-link, #statistic-link, #audio-link, #sprint-link {
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
 }
 
 .main {
@@ -333,7 +351,7 @@ button:hover {
 }
 
 .pagination ul li{
-  color: #20B2AA;
+  color: black;
   list-style: none;
   line-height: 45px;
   text-align: center;
@@ -372,5 +390,5 @@ button:hover {
 .pagination ul li:first-child:hover,
 .pagination ul li:last-child:hover{
   color: #fff;
-  background: #20B2AA;
+  background: burlywood;
 }

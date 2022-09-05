@@ -1,5 +1,5 @@
 export const sprintContainer = async () => {
-  const sprintBtn = document.querySelector(".sprint");
+  const sprintBtns = document.querySelectorAll(".sprint");
   const mainInfoContainer = document.querySelector(".main") as HTMLElement;
   async function sprintHandler() {
     return (mainInfoContainer.innerHTML = `
@@ -7,5 +7,7 @@ export const sprintContainer = async () => {
     `);
   }
 
-  sprintBtn?.addEventListener("click", sprintHandler);
+  sprintBtns.forEach((sprintBtn) =>
+    sprintBtn.addEventListener("click", sprintHandler)
+  );
 };

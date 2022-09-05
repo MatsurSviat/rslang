@@ -1,3 +1,5 @@
+import { authorizationContainerRender } from "./authorizationButton";
+
 export const baseContainerRender = async () => {
   const rootContainer = document.querySelector(".root") as HTMLDivElement;
   rootContainer.innerHTML = `
@@ -6,13 +8,16 @@ export const baseContainerRender = async () => {
 			<div class="header-nav">
 			<a class="header-link" href="../index.html"><h2 class="rs-lang">RS Lang</h2></a>
 			<div class="header-buttons">
-			<button class="theme">&#9790;</button>
 			<button class="authorization">🔒</button>
-			<button class="menu">
-			<a href="#" class="menu-btn">
-                <span></span>
-              </a>
-			  </button>
+			<div class="menu">
+  <button class="menu-btn">☰</button>
+  <div class="menu-content">
+    <button class="book" id="book-link">Учебник</button>
+    <button class="statistic" id="statistic-link">Статистика</button>
+ <button class="sprint" id="sprint-link">Спринт</button>
+ <button class="audio" id="audio-link">Аудиовызов</button>
+  </div>
+</div>
 		</div>
 		</div>
 		</header>
@@ -20,10 +25,8 @@ export const baseContainerRender = async () => {
 		<div class="nav">
 			<button class="book">Учебник</button>
 			<button class="statistic">Статистика</button>
-			<button class="savannah">Саванна</button>
 			<button class="sprint">Спринт</button>
 			<button class="audio">Аудиовызов</button>
-			<button class="writing">Написание</button>
 		  </div>
 
 		  <div class="information">
@@ -50,4 +53,5 @@ export const baseContainerRender = async () => {
 		</footer>
   </div>
       `;
+  authorizationContainerRender();
 };

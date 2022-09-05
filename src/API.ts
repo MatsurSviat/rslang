@@ -28,8 +28,8 @@ export const Auth = {
       body: JSON.stringify(auth),
     });
     const result: AuthResponse = await response.json();
-    userData.token = result.token;
-    userData.id = result.userId;
+    console.log(result);
+
     saveUserInLocalStorage(result.token, result.userId);
     return result;
   },

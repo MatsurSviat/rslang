@@ -1,4 +1,9 @@
+import { advancedLevel } from "../buttonsLevel/advancedButon";
 import { elementaryLevel } from "../buttonsLevel/elementaryButton";
+import { intermediateLevel } from "../buttonsLevel/intermediateButton";
+import { preintermediateLevel } from "../buttonsLevel/preIntermediateButton";
+import { profiencyLevel } from "../buttonsLevel/profiencyButton";
+import { upperIntermediateLevel } from "../buttonsLevel/upperIntermediateButton";
 
 const bookHandler = async () => {
   const mainInfoContainer = document.querySelector(".main") as HTMLElement;
@@ -16,10 +21,15 @@ const bookHandler = async () => {
   </div>
     `;
   elementaryLevel();
+  preintermediateLevel();
+  intermediateLevel();
+  upperIntermediateLevel();
+  advancedLevel();
+  profiencyLevel();
 };
 
 export const bookContainerRender = () => {
-  const bookBtn = document.querySelector(".book");
+  const bookBtns = document.querySelectorAll(".book");
 
-  bookBtn?.addEventListener("click", bookHandler);
+  bookBtns.forEach((bookBtn) => bookBtn.addEventListener("click", bookHandler));
 };
