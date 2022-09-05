@@ -1,10 +1,9 @@
+import { startGameSprint } from "../../sprintGame/scriptSprint";
+
 export const sprintContainer = async () => {
   const sprintBtns = document.querySelectorAll(".sprint");
-  const mainInfoContainer = document.querySelector(".main") as HTMLElement;
   async function sprintHandler() {
-    return (mainInfoContainer.innerHTML = `
-      
-    `);
+    startGameSprint();
   }
 
   sprintBtns.forEach((sprintBtn) =>
