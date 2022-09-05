@@ -32,8 +32,8 @@ export function startTimer() {
 
 export function getramdomWord() {
   const ar = [true, false];
-  let rand = Math.round(Math.random());
-  flagStartGame.value = String(ar[rand]); 
+  const rand = Math.round(Math.random());
+  flagStartGame.value = String(ar[rand]);
   const obj: IRamdom = {
     bool: ar[rand],
     numWord: NaN,
@@ -44,11 +44,11 @@ export function getramdomWord() {
     obj.numWord = flagStartGame.indexStart;
     obj.wordTranslate = flagStartGame.indexStart;
   } else {
-    const count = random(flagStartGame.indexStart)
+    const count = random(flagStartGame.indexStart);
     console.log(count);
     obj.numWord = flagStartGame.indexStart;
-    if(count) {
-    obj.wordTranslate = count;
+    if (count) {
+      obj.wordTranslate = count;
     }
   }
   flagStartGame.indexStart += 1;
@@ -86,17 +86,18 @@ function playAudioTimer() {
   audio.play();
 }
 
-export function sortArrayWords(array : Array<IWords> | Array<number>) {
+export function sortArrayWords(array: Array<IWords> | Array<number>) {
   for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
 }
 
 function random(num: number) {
   const randomNum = Math.floor(Math.random() * 100);
-  if(!(num === randomNum)) {
-    return randomNum
+  if (!(num === randomNum)) {
+    return randomNum;
+  } else {
+    random(num);
   }
-  else { random(num) }
 }

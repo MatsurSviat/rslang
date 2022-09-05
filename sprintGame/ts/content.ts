@@ -1,8 +1,6 @@
 import { IWords, IanswerSprint } from "./interface";
 import { getramdomWord } from "./function";
 
-
-
 export const startPages = async () => {
   const mainInfoContainer = document.querySelector(".main") as HTMLElement;
   const html = `
@@ -26,7 +24,7 @@ export const startPages = async () => {
   </div>
 </div>
 `;
-  if(mainInfoContainer) {
+  if (mainInfoContainer) {
     mainInfoContainer.innerHTML = html;
   }
 };
@@ -60,18 +58,20 @@ export const startGame = async (arr: Array<IWords>) => {
   </div>
 </div>
 `;
-  if(mainInfoContainer) {
+  if (mainInfoContainer) {
     mainInfoContainer.innerHTML = html;
   }
- 
 };
 
-export const endGame = async (result: string | null, countObj: IanswerSprint) => {
+export const endGame = async (
+  result: string | null,
+  countObj: IanswerSprint
+) => {
   const mainInfoContainer = document.querySelector(".main") as HTMLElement;
   let wordsAnswerBlock = ``;
-  countObj.wordsAnswer.forEach(elem => {
-    wordsAnswerBlock += `<div class="learn-word">${elem}</div>`
-  })
+  countObj.wordsAnswer.forEach((elem) => {
+    wordsAnswerBlock += `<div class="learn-word">${elem}</div>`;
+  });
   const html = `
   <div class="container-wrapper">
     <div class="container-end-game">
@@ -89,8 +89,7 @@ export const endGame = async (result: string | null, countObj: IanswerSprint) =>
     </div>
   </div>
 `;
-  if(mainInfoContainer) {
+  if (mainInfoContainer) {
     mainInfoContainer.innerHTML = html;
   }
 };
-
