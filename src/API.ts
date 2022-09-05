@@ -10,7 +10,7 @@ import {
   Word,
 } from "./modules";
 
-export const BASE_URL = "https://rs-lang-team184.herokuapp.com";
+export const BASE_URL = "https://react-learnwords-184.herokuapp.com";
 
 export const userData: UserData = {
   token: null,
