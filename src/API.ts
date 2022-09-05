@@ -10,9 +10,8 @@ import {
   Word,
 } from "./modules";
 
-export const BASE_URL = "http://localhost:27017";
+export const BASE_URL = "https://rs-lang-team184.herokuapp.com";
 
-// "https://rs-lang-team184.herokuapp.com";
 
 export const userData: UserData = {
   token: null,
