@@ -12,7 +12,6 @@ import {
 
 export const BASE_URL = "https://rs-lang-team184.herokuapp.com";
 
-
 export const userData: UserData = {
   token: null,
   id: null,
@@ -29,7 +28,7 @@ export const Auth = {
     const result: AuthResponse = await response.json();
     console.log(result);
 
-    saveUserInLocalStorage(result.token, result.userId);
+    // saveUserInLocalStorage(result.token, result.userId);
     return result;
   },
 };

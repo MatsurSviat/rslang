@@ -9,7 +9,7 @@ export async function start() {
   await baseContainerRender();
   await bookContainerRender();
   await statisticContainer();
-  await audioCallContainer();
   await authorizationContainerRender();
   await sprintContainer();
+  await audioCallContainer();
 }
